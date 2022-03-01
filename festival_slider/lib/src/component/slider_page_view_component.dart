@@ -1,3 +1,4 @@
+import 'package:festival_slider/src/page/flutter_installation_screen.dart';
 import 'package:festival_slider/src/page/history_of_flutter_embedded_screen.dart';
 import 'package:festival_slider/src/page/intro/mission_screen.dart';
 import 'package:festival_slider/src/page/intro/slider_index_screen.dart';
@@ -8,9 +9,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 List<Widget> sliderItems = [
   const MissionScreen(),
-  const SliderIndexScreen(),
+  SliderIndexScreen(index: 0),
   const AboutRpiScreen(),
+  SliderIndexScreen(index: 1),
   const HistoryOfFlutterEmbeddedScreen(),
+  SliderIndexScreen(index: 2),
+  FlutterInstallationScreen(),
 ];
 
 class SliderPageViewComponent extends ConsumerWidget {

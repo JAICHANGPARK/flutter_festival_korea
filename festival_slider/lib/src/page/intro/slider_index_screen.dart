@@ -10,7 +10,8 @@ List<String> indexTitles = [
 ];
 
 class SliderIndexScreen extends StatelessWidget {
-  const SliderIndexScreen({Key? key}) : super(key: key);
+  SliderIndexScreen({Key? key, required this.index}) : super(key: key);
+  int index;
 
   @override
   Widget build(BuildContext context) {
@@ -29,23 +30,33 @@ class SliderIndexScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: indexTitles.length,
-                itemBuilder: (context, index){
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "${index+1}. ${indexTitles[index]}",
-                    style: Theme.of(context).textTheme.headline3,
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                ],
-              );
-            }),
+                itemCount: indexTitles.length,
+                itemBuilder: (context, idx) {
+                  return Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      
+                      border: index != 0 ? Border.all(
+                        color:  index == idx ? Colors.blueAccent : Colors.transparent,
+                        width: 4
+                      ) : null,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "${idx + 1}. ${indexTitles[idx]}",
+                          style: Theme.of(context).textTheme.headline3,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                      ],
+                    ),
+                  );
+                }),
           ),
-
         ],
       ),
     ));

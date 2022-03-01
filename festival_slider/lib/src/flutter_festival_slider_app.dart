@@ -1,11 +1,8 @@
+import 'package:festival_slider/main.dart';
 import 'package:festival_slider/src/router.dart';
 import 'package:festival_slider/src/utils/styles.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:adwaita/adwaita.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-
 
 class FlutterFestivalSliderApp extends StatelessWidget {
   FlutterFestivalSliderApp({Key? key}) : super(key: key);
@@ -18,6 +15,7 @@ class FlutterFestivalSliderApp extends StatelessWidget {
       builder: (_, ThemeMode currentMode, __) {
         debugPrint("currentMode: $currentMode");
         return MaterialApp.router(
+          scrollBehavior: AppScrollBehavior(),
           theme: themeData,
           debugShowCheckedModeBanner: false,
           routeInformationParser: router.routeInformationParser,
