@@ -1,0 +1,39 @@
+import 'package:festival_slider/src/component/rpi/rpi_hardware_component.dart';
+import 'package:festival_slider/src/component/rpi/rpi_os_component.dart';
+import 'package:festival_slider/src/component/rpi/rpi_prepare_component.dart';
+import 'package:festival_slider/src/component/slider/slider_white_board.dart';
+import 'package:festival_slider/src/service/launcher_api.dart';
+import 'package:festival_slider/src/utils/styles.dart';
+import 'package:flutter/material.dart';
+
+class AboutRpiScreen extends StatelessWidget {
+  const AboutRpiScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      child: Column(
+        children: [
+          TabBar(labelColor: kPrimaryColor, tabs: const [
+            Tab(
+              text: "Preparations",
+            ),
+            Tab(
+              text: "Hardware",
+            ),
+            Tab(
+              text: "OS",
+            ),
+          ]),
+          const Expanded(
+              child: TabBarView(children: [
+            RpiPrepareComponent(),
+            RpiHardwareComponent(),
+            RpiOSComponent(),
+          ])),
+        ],
+      ),
+    );
+  }
+}
