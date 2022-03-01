@@ -45,6 +45,7 @@ flutter:
     - assets/slider_img/
     - assets/img/
     - assets/rpi/
+    - assets/img/code/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -1,3 +1,4 @@
+import 'package:festival_slider/src/page/build_gpio_app_screen.dart';
 import 'package:festival_slider/src/page/flutter_installation_screen.dart';
 import 'package:festival_slider/src/page/history_of_flutter_embedded_screen.dart';
 import 'package:festival_slider/src/page/intro/mission_screen.dart';
@@ -18,5 +19,6 @@ List<Widget> sliderItems = [
   SliderIndexScreen(index: 3),
   const RpiIOScreen(),
   SliderIndexScreen(index: 4),
-  ThanksScreen(),
+  const BuildGpioAppScreen(),
+  const ThanksScreen(),
 ];

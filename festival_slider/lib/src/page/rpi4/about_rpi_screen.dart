@@ -13,6 +13,7 @@ class AboutRpiScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
+
       child: Column(
         children: [
           TabBar(labelColor: kPrimaryColor, tabs: const [
@@ -27,7 +28,9 @@ class AboutRpiScreen extends StatelessWidget {
             ),
           ]),
           const Expanded(
-              child: TabBarView(children: [
+              child: TabBarView(
+                  physics: NeverScrollableScrollPhysics(),
+                  children: [
             RpiPrepareComponent(),
             RpiHardwareComponent(),
             RpiOSComponent(),

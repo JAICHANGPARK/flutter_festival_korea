@@ -40,7 +40,9 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                   ),
                 ]),
             Expanded(
-              child: TabBarView(children: [
+              child: TabBarView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: [
                 SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.all(72.0),
@@ -333,7 +335,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/flutter_install_13.png",
                           height: 480,
                         ),
-                        Divider(),
+                        const Divider(),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -359,7 +361,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/flutter_install_14.png",
                           height: 480,
                         ),
-                        Divider(),
+                        const Divider(),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
