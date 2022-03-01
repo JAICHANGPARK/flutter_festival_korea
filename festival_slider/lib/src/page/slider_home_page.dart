@@ -9,6 +9,7 @@ import 'package:festival_slider/src/provider/slide_page_provider.dart';
 import 'package:festival_slider/src/provider/timer_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class SliderHomePage extends ConsumerWidget {
   const SliderHomePage({Key? key}) : super(key: key);
@@ -29,7 +30,10 @@ class SliderHomePage extends ConsumerWidget {
                   ),
                   selectedIndex: _selectedIndex,
                   onDestinationSelected: (int index) {
-                    if (index == 1 && !(Platform.isLinux)) {
+                    if(index == 0){
+                      GoRouter.of(context).go("/");
+                    }
+                    if (index == 2 && !(Platform.isLinux)) {
                       showDialog(
                           context: context,
                           builder: (context) {
@@ -43,6 +47,11 @@ class SliderHomePage extends ConsumerWidget {
                   },
                   labelType: NavigationRailLabelType.all,
                   destinations: const [
+                    NavigationRailDestination(
+                      icon: Icon(Icons.title),
+                      selectedIcon: Icon(Icons.title),
+                      label: Text('Title'),
+                    ),
                     NavigationRailDestination(
                       icon: Icon(Icons.home_outlined),
                       selectedIcon: Icon(Icons.home),

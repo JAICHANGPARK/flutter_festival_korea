@@ -1,13 +1,6 @@
 import 'package:festival_slider/src/component/slider/slider_white_board.dart';
+import 'package:festival_slider/src/model/slider_index_title.dart';
 import 'package:flutter/material.dart';
-
-List<String> indexTitles = [
-  "What's Raspberry Pi",
-  "History of Flutter Embedded",
-  "Flutter Installation",
-  "Raspberry Pi IO",
-  "Build RPi GPIO App",
-];
 
 class SliderIndexScreen extends StatelessWidget {
   SliderIndexScreen({Key? key, required this.index}) : super(key: key);
@@ -33,14 +26,15 @@ class SliderIndexScreen extends StatelessWidget {
                 itemCount: indexTitles.length,
                 itemBuilder: (context, idx) {
                   return Container(
-                    padding: const EdgeInsets.all(4),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      
-                      border: index != 0 ? Border.all(
-                        color:  index == idx ? Colors.blueAccent : Colors.transparent,
-                        width: 4
-                      ) : null,
+                      border: index != 0
+                          ? Border.all(
+                              color: index == idx ? Colors.blueAccent : Colors.transparent,
+                              width: 4,
+                            )
+                          : null,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +44,7 @@ class SliderIndexScreen extends StatelessWidget {
                           style: Theme.of(context).textTheme.headline3,
                         ),
                         const SizedBox(
-                          height: 8,
+                          height: 4,
                         ),
                       ],
                     ),

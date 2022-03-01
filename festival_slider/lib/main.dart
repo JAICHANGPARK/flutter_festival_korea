@@ -19,7 +19,7 @@ class AppScrollBehavior extends MaterialScrollBehavior {
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    setWindowTitle('Flutter Festival Korea');
+    setWindowTitle('2022 Flutter Festival Korea');
     setWindowMaxSize(Size(kWindowMaxWidth, kWindowMaxHeight));
     setWindowMinSize(Size(kWindowMinWidth, kWindowMinHeight));
   }

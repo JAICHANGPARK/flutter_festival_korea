@@ -1,13 +1,10 @@
-import 'package:festival_slider/src/component/slider_page_view_component.dart';
-import 'package:festival_slider/src/page/slider_home_page.dart';
+import 'package:festival_slider/src/model/slider_screens.dart';
 import 'package:festival_slider/src/provider/slide_page_provider.dart';
 import 'package:festival_slider/src/provider/timer_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 List<Widget> homeFooterItems = [
-
-
   Consumer(builder: (BuildContext context, WidgetRef ref, Widget? child) {
     final timer = ref.watch(timerProvider);
     return Text(timer);
@@ -52,7 +49,7 @@ List<Widget> homeFooterItems = [
         onPressed: () {
           int _idx = index;
           _idx++;
-          if(_idx > sliderItems.length){
+          if (_idx > sliderItems.length) {
             _idx = sliderItems.length;
           }
           ref.read(sliderPageIndexProvider.notifier).state = _idx;
@@ -63,8 +60,6 @@ List<Widget> homeFooterItems = [
     },
   ),
 ];
-
-
 
 class HomeFooterComponent extends StatelessWidget {
   const HomeFooterComponent({Key? key}) : super(key: key);

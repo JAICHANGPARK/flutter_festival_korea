@@ -126,6 +126,13 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "SSH 또는 VNC를 설정하여 다른 머신에서 개발을 진행해도 됩니다.",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ),
                         Image.asset(
                           "assets/img/os_init_07.png",
                           height: 480,
@@ -388,7 +395,54 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                     ),
                   ),
                 ),
-                Container(),
+                SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(72.0),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "1. 웹 설정 후 구동 확인",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "chrome 경로 설정과 Flutter config에서 웹 설정을 활성화 합니다.",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ),
+                        Image.asset(
+                          "assets/img/flutter_install_17.png",
+                          height: 480,
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "실행할 플랫폼을 설정합니다. 이번에는 웹으로 설정하고 실행해봅니다."
+                                "\n(빌드 시간이 다소 소요될 수 있습니다.)",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ),
+
+                        Image.asset(
+                          "assets/img/flutter_install_18.png",
+                          height: 480,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Flutter web도 문제없이 라즈베리파이4 환경에서 실행됨을 확인할 수 있습니다.",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ]),
             ),
           ],

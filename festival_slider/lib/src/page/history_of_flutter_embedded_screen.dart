@@ -52,15 +52,15 @@ class HistoryOfFlutterEmbeddedScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   child: Text(
-                    "🎯 2018년 medium의 Flutter on Raspberry Pi (mostly) from scratch 글에서 "
-                    "라즈베리파이에서도 플러터를 사용할 수 있음을 확인할 수 있음.",
+                    "🎯 2018년 medium의 Flutter on Raspberry Pi (mostly) from scratch 글에서\n"
+                    "\"라즈베리파이도 플러터를 사용할 수 있음\"을 확인할 수 있음.",
                     style: Theme.of(context).textTheme.headline6,
                   ),
                 ),
                 Center(
                   child: Image.asset(
                     "assets/img/blog_01.png",
-                    height: 420,
+                    height: 480,
                   ),
                 ),
                 Padding(
@@ -126,7 +126,7 @@ class HistoryOfFlutterEmbeddedScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   child: Text(
                     "임베디드 시스템에 대한 진입장벽이 크고 "
-                    "Flutter를 적용하기에는 빌드 및 포팅하는 과정이 복잡하고 어려웠음.",
+                    "Flutter를 적용하기에는 빌드 및 포팅하는 과정이 복잡하고 어려움.",
                     style: Theme.of(context).textTheme.headline6,
                   ),
                 ),
