@@ -1,4 +1,5 @@
 import 'package:festival_slider/src/component/code_container.dart';
+import 'package:festival_slider/src/component/rpi/rpi_gpio_simple_reader_component.dart';
 import 'package:festival_slider/src/component/slider/slider_white_board.dart';
 import 'package:festival_slider/src/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -127,9 +128,10 @@ class BuildGpioAppScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "1. foreign function interface (ffi)",
-                              style: Theme.of(context).textTheme.headline5?.copyWith(
-                                  color: kSecondaryColor
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
                           Padding(
@@ -144,9 +146,10 @@ class BuildGpioAppScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "2. RPI GPIO Package",
-                              style: Theme.of(context).textTheme.headline5?.copyWith(
-                                  color: kSecondaryColor
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
                           Image.asset(
@@ -176,9 +179,10 @@ class BuildGpioAppScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "3. pubspec.yaml에 패키지 추가",
-                              style: Theme.of(context).textTheme.headline5?.copyWith(
-                                  color: kSecondaryColor
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
                           Padding(
@@ -192,9 +196,10 @@ class BuildGpioAppScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "4. 칩 정보 확인하기",
-                              style: Theme.of(context).textTheme.headline5?.copyWith(
-                                  color: kSecondaryColor
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
                           Image.asset(
@@ -206,9 +211,10 @@ class BuildGpioAppScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "5. 핀(I/O) 상태 확인하기",
-                              style: Theme.of(context).textTheme.headline5?.copyWith(
-                                color: kSecondaryColor
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
                           Image.asset(
@@ -252,7 +258,10 @@ class BuildGpioAppScreen extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 "https://pinout.xyz/",
-                                style: Theme.of(context).textTheme.headline6?.copyWith(
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline6
+                                    ?.copyWith(
                                       decoration: TextDecoration.underline,
                                       color: kSecondaryColor,
                                     ),
@@ -261,39 +270,49 @@ class BuildGpioAppScreen extends StatelessWidget {
                             ),
                           ),
                           const Divider(),
-                          const SizedBox(height: 64,),
+                          const SizedBox(
+                            height: 64,
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "6. 핀 출력 설정하기",
-                              style: Theme.of(context).textTheme.headline5?.copyWith(
-                                  color: kSecondaryColor
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
                           Image.asset(
                             "assets/img/code/code_04.png",
                           ),
-                          const SizedBox(height: 64,),
+                          const SizedBox(
+                            height: 64,
+                          ),
                           const Divider(),
-                          const SizedBox(height: 64,),
+                          const SizedBox(
+                            height: 64,
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "7. 핀 입력 설정하기",
-                              style: Theme.of(context).textTheme.headline5?.copyWith(
-                                  color: kSecondaryColor
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
                           Image.asset(
                             "assets/img/code/code_05.png",
                           ),
-                          const SizedBox(height: 64,),
+                          const SizedBox(
+                            height: 64,
+                          ),
                         ],
                       ),
                     ),
-                    Container(),
+                    RpiGpioSimpleReaderComponent(),
                   ],
                 ),
               ),

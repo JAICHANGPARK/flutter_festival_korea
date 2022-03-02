@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 
 class FlutterFestivalSliderApp extends StatelessWidget {
   FlutterFestivalSliderApp({Key? key}) : super(key: key);
-  final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.system);
+  final ValueNotifier<ThemeMode> themeNotifier =
+      ValueNotifier(ThemeMode.system);
 
   @override
   Widget build(BuildContext context) {

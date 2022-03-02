@@ -37,13 +37,14 @@ Color kBackgroundDark = const Color(0xff042b59);
 //        labelSmall = labelSmall ?? overline;
 
 ThemeData themeData = ThemeData(
+  fontFamily: 'NanumGothic',
   textTheme: TextTheme(
-    headline1: GoogleFonts.notoSans(
+    headline1: TextStyle(
       fontSize: 48,
       color: kPrimaryColor,
       fontWeight: FontWeight.bold,
     ),
-    headline2: GoogleFonts.notoSans(
+    headline2: TextStyle(
       fontSize: 40,
       color: kSecondaryColor,
     ),
