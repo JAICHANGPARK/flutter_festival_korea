@@ -16,17 +16,19 @@ class SliderIndexScreen extends StatelessWidget {
         children: [
           Text(
             'Index',
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.headline1?.copyWith(
+              fontSize: 120
+            ),
           ),
           const SizedBox(
-            height: 24,
+            height: 64,
           ),
           Expanded(
             child: ListView.builder(
                 itemCount: indexTitles.length,
                 itemBuilder: (context, idx) {
                   return Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       border: index != 0
@@ -39,12 +41,17 @@ class SliderIndexScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        const SizedBox(
+                          height: 12,
+                        ),
                         Text(
                           "${idx + 1}. ${indexTitles[idx]}",
-                          style: Theme.of(context).textTheme.headline3,
+                          style: Theme.of(context).textTheme.headline3?.copyWith(
+                            fontSize: 64
+                          ),
                         ),
                         const SizedBox(
-                          height: 4,
+                          height: 12,
                         ),
                       ],
                     ),

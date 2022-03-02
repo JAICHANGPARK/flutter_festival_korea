@@ -27,7 +27,6 @@ class RpiIOScreen extends StatelessWidget {
               "https://www.raspberrypi.com/documentation/computers/images/GPIO.png",
               height: 480,
             ),
-
           ],
         ),
       ),

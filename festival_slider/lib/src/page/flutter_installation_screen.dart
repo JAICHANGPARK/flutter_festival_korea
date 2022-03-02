@@ -18,10 +18,13 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
         length: 5,
         child: Column(
           children: [
-            TabBar(
+            SizedBox(
+              height: 64,
+              child: TabBar(
                 labelColor: kSecondaryColor,
                 indicatorSize: TabBarIndicatorSize.label,
                 isScrollable: true,
+                indicatorWeight: 6,
                 tabs: const [
                   Tab(
                     text: "OS Setup",
@@ -38,11 +41,15 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                   Tab(
                     text: "Web",
                   ),
-                ]),
+                ],
+                labelStyle: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             Expanded(
-              child: TabBarView(
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
+              child: TabBarView(physics: const NeverScrollableScrollPhysics(), children: [
                 SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.all(72.0),
@@ -59,7 +66,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/os_init_01.png",
                           height: 480,
                         ),
-                        const Divider(),
+                        const Divider(height: 120,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -78,7 +85,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/os_init_03.png",
                           height: 480,
                         ),
-                        const Divider(),
+                        const Divider(height: 120,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -97,7 +104,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/os_init_04.png",
                           height: 480,
                         ),
-                        const Divider(),
+                        const Divider(height: 120,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -120,7 +127,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/os_init_06.png",
                           height: 480,
                         ),
-                        const Divider(),
+                        const Divider(height: 120,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -173,7 +180,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/flutter_install_01.png",
                           height: 480,
                         ),
-                        const Divider(),
+                        const Divider(height: 120,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -219,7 +226,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/flutter_install_04.png",
                           height: 480,
                         ),
-                        const Divider(),
+                        const Divider(height: 120,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -269,7 +276,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/flutter_install_10.png",
                           height: 480,
                         ),
-                        const Divider(),
+                        const Divider(height: 120,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -289,7 +296,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/flutter_install_11.png",
                           height: 480,
                         ),
-                        const Divider(),
+                        const Divider(height: 120,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -335,7 +342,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/flutter_install_13.png",
                           height: 480,
                         ),
-                        const Divider(),
+                        const Divider(height: 120,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -361,7 +368,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/flutter_install_14.png",
                           height: 480,
                         ),
-                        const Divider(),
+                        const Divider(height: 120,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -373,7 +380,7 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "빌드가 완료되면 데스크톱 앱이 실행됩니다.\n"
-                                "(다소 시간이 소요될 수 있습니다.)",
+                            "(다소 시간이 소요될 수 있습니다.)",
                             style: Theme.of(context).textTheme.headline6,
                             textAlign: TextAlign.center,
                           ),
@@ -389,7 +396,8 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                             style: Theme.of(context).textTheme.headline6,
                             textAlign: TextAlign.center,
                           ),
-                        ),  Image.asset(
+                        ),
+                        Image.asset(
                           "assets/img/flutter_install_16.png",
                           height: 480,
                         ),
@@ -420,16 +428,14 @@ class _FlutterInstallationScreenState extends State<FlutterInstallationScreen> {
                           "assets/img/flutter_install_17.png",
                           height: 480,
                         ),
-
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "실행할 플랫폼을 설정합니다. 이번에는 웹으로 설정하고 실행해봅니다."
-                                "\n(빌드 시간이 다소 소요될 수 있습니다.)",
+                            "\n(빌드 시간이 다소 소요될 수 있습니다.)",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ),
-
                         Image.asset(
                           "assets/img/flutter_install_18.png",
                           height: 480,

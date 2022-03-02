@@ -18,6 +18,11 @@ class BuildGpioAppScreen extends StatelessWidget {
             TabBar(
               labelColor: kSecondaryColor,
               isScrollable: true,
+              labelStyle: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+              indicatorWeight: 6,
               tabs: const [
                 Tab(
                   text: "Aim",
@@ -44,45 +49,61 @@ class BuildGpioAppScreen extends StatelessWidget {
                       children: [
                         Text(
                           "기존 불편한 점",
-                          style: Theme.of(context).textTheme.headline2,
+                          style: Theme.of(context).textTheme.headline2?.copyWith(
+                            fontSize: 64
+                          ),
                         ),
                         const SizedBox(
                           height: 16,
                         ),
                         Text(
                           "1. Raspberry Pi(줄여서 Rpi) GPIO를 설정하고 I/O의 전압상태를 모니터링 하기 복잡하고 불편함.",
-                          style: Theme.of(context).textTheme.headline6,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        const SizedBox(
+                          height: 24,
                         ),
                         Text(
                           "2. raspi-gpio를 가지고 모니터링 하기 위한 사용자 친화적인 프로그램구현이 어려움.",
-                          style: Theme.of(context).textTheme.headline6,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        const SizedBox(
+                          height: 24,
                         ),
                         Text(
                           "3. c/c++&python에 지식이 없다면 별도로 공부를 진행해야함.",
-                          style: Theme.of(context).textTheme.headline6,
+                          style: Theme.of(context).textTheme.headline4,
                         ),
                         const SizedBox(
                           height: 42,
                         ),
                         Text(
                           "목표",
-                          style: Theme.of(context).textTheme.headline2,
+                          style: Theme.of(context).textTheme.headline2?.copyWith(
+                              fontSize: 64
+                          ),
                         ),
                         const SizedBox(
                           height: 16,
                         ),
                         Text(
                           "1. Dart와 Flutter만을 가지고 사용자 친화적인 GPIO 모니터링 앱을 개발하고자 함.",
-                          style: Theme.of(context).textTheme.headline6,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        const SizedBox(
+                          height: 24,
                         ),
                         Text(
                           "2. Flutter는 UI toolkit으로 임베디스 시스템 하드웨어에 접근하려면 ffi를 통해 직접 "
                           "인터페이스를 개발하거나 패키지를 사용해야 함.",
-                          style: Theme.of(context).textTheme.headline6,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        const SizedBox(
+                          height: 24,
                         ),
                         Text(
                           "3. 생산성",
-                          style: Theme.of(context).textTheme.headline6,
+                          style: Theme.of(context).textTheme.headline4,
                         )
                       ],
                     ),
@@ -93,7 +114,7 @@ class BuildGpioAppScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "1. Visual Studio Code",
-                              style: Theme.of(context).textTheme.headline5,
+                              style: Theme.of(context).textTheme.headline4,
                             ),
                           ),
                           Padding(
@@ -103,12 +124,12 @@ class BuildGpioAppScreen extends StatelessWidget {
                               style: Theme.of(context).textTheme.headline6,
                             ),
                           ),
-                          const Divider(),
+                          const Divider(height: 120,),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "2. Flutter Package 설치",
-                              style: Theme.of(context).textTheme.headline5,
+                              style: Theme.of(context).textTheme.headline4,
                             ),
                           ),
                           Padding(
@@ -130,7 +151,7 @@ class BuildGpioAppScreen extends StatelessWidget {
                               "1. foreign function interface (ffi)",
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline5
+                                  .headline3
                                   ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
@@ -141,14 +162,14 @@ class BuildGpioAppScreen extends StatelessWidget {
                               style: Theme.of(context).textTheme.headline6,
                             ),
                           ),
-                          const Divider(),
+                          const Divider(height: 120,),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "2. RPI GPIO Package",
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline5
+                                  .headline3
                                   ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
@@ -174,14 +195,14 @@ class BuildGpioAppScreen extends StatelessWidget {
                             "assets/img/pub_gpiod.png",
                             height: 480,
                           ),
-                          const Divider(),
+                          const Divider(height: 120,),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "3. pubspec.yaml에 패키지 추가",
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline5
+                                  .headline3
                                   ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
@@ -191,14 +212,14 @@ class BuildGpioAppScreen extends StatelessWidget {
                                 code: "flutter_gpiod: ^0.4.0",
                                 fileName: "pubspec.yaml",
                               )),
-                          const Divider(),
+                          const Divider(height: 120,),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "4. 칩 정보 확인하기",
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline5
+                                  .headline3
                                   ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
@@ -206,14 +227,14 @@ class BuildGpioAppScreen extends StatelessWidget {
                             "assets/img/code/code_01.png",
                             height: 380,
                           ),
-                          const Divider(),
+                          const Divider(height: 120,),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "5. 핀(I/O) 상태 확인하기",
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline5
+                                  .headline3
                                   ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
@@ -241,7 +262,7 @@ class BuildGpioAppScreen extends StatelessWidget {
                           ),
                           Image.asset(
                             "assets/img/rpi_pinout.png",
-                            height: 380,
+                            height: 480,
                             // height: 380,
                           ),
                           Padding(
@@ -269,7 +290,7 @@ class BuildGpioAppScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const Divider(),
+                          const Divider(height: 120,),
                           const SizedBox(
                             height: 64,
                           ),
@@ -279,7 +300,7 @@ class BuildGpioAppScreen extends StatelessWidget {
                               "6. 핀 출력 설정하기",
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline5
+                                  .headline3
                                   ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
@@ -289,7 +310,7 @@ class BuildGpioAppScreen extends StatelessWidget {
                           const SizedBox(
                             height: 64,
                           ),
-                          const Divider(),
+                          const Divider(height: 120,),
                           const SizedBox(
                             height: 64,
                           ),
@@ -299,7 +320,7 @@ class BuildGpioAppScreen extends StatelessWidget {
                               "7. 핀 입력 설정하기",
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline5
+                                  .headline3
                                   ?.copyWith(color: kSecondaryColor),
                             ),
                           ),
@@ -312,7 +333,7 @@ class BuildGpioAppScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    RpiGpioSimpleReaderComponent(),
+                    const RpiGpioSimpleReaderComponent(),
                   ],
                 ),
               ),

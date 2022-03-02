@@ -40,7 +40,7 @@ ThemeData themeData = ThemeData(
   fontFamily: 'NanumGothic',
   textTheme: TextTheme(
     headline1: TextStyle(
-      fontSize: 48,
+      fontSize: 64,
       color: kPrimaryColor,
       fontWeight: FontWeight.bold,
     ),

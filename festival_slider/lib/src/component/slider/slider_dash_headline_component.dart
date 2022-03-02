@@ -37,10 +37,10 @@ class SliderDashHeadlineComponent extends StatelessWidget {
           Positioned(
             child: Image.asset(
               AssetManager.kSliderLogoColor,
-              width: MediaQuery.of(context).size.width / 3,
+              width: MediaQuery.of(context).size.width / 3.5,
             ),
             right: 48,
-            bottom: 16,
+            bottom: 8,
           )
         ],
       ),

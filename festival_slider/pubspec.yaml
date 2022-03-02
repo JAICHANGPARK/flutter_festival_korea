@@ -29,6 +29,7 @@ dependencies:
   google_fonts: any
   flutter_riverpod: any
   url_launcher: any
+  flutter_gpiod: any
 
 
 dev_dependencies:

@@ -10,6 +10,7 @@ import 'package:async/async.dart';
 class IOEvent {
   SignalEvent signalEvent;
   int ioNum;
+
   IOEvent(this.signalEvent, this.ioNum);
 }
 
@@ -17,13 +18,12 @@ class RpiGpioSimpleReaderComponent extends StatefulWidget {
   const RpiGpioSimpleReaderComponent({Key? key}) : super(key: key);
 
   @override
-  State<RpiGpioSimpleReaderComponent> createState() =>
-      _RpiGpioSimpleReaderComponentState();
+  State<RpiGpioSimpleReaderComponent> createState() => _RpiGpioSimpleReaderComponentState();
 }
 
-class _RpiGpioSimpleReaderComponentState
-    extends State<RpiGpioSimpleReaderComponent> {
-  final chips = FlutterGpiod.instance.chips;
+class _RpiGpioSimpleReaderComponentState extends State<RpiGpioSimpleReaderComponent> {
+  List<GpioChip> chips = [];
+
   Map<int, GpioLine> lineMap = {};
   Map<int, IOEvent> lineEventMap = {};
   Map<String, StreamSubscription?> ioStreamSubMap = {};
@@ -35,6 +35,7 @@ class _RpiGpioSimpleReaderComponentState
     // TODO: implement initState
     super.initState();
     if (Platform.isLinux) {
+      chips = FlutterGpiod.instance.chips;
       setState(() {
         isSupportMachine = true;
       });
@@ -52,8 +53,7 @@ class _RpiGpioSimpleReaderComponentState
     }
     final chip = chips.singleWhere(
       (chip) => chip.label == 'pinctrl-bcm2711',
-      orElse: () =>
-          chips.singleWhere((chip) => chip.label == 'pinctrl-bcm2835'),
+      orElse: () => chips.singleWhere((chip) => chip.label == 'pinctrl-bcm2835'),
     );
     lineMap[23] = chip.lines[23];
     lineMap[24] = chip.lines[24];
@@ -62,16 +62,12 @@ class _RpiGpioSimpleReaderComponentState
     final line2 = chip.lines[24];
     final line3 = chip.lines[25];
 
-    line0.requestInput(
-        consumer: "test 0", triggers: {SignalEdge.falling, SignalEdge.rising});
-    line1.requestInput(
-        consumer: "test 1", triggers: {SignalEdge.falling, SignalEdge.rising});
+    line0.requestInput(consumer: "test 0", triggers: {SignalEdge.falling, SignalEdge.rising});
+    line1.requestInput(consumer: "test 1", triggers: {SignalEdge.falling, SignalEdge.rising});
 
-    line2.requestInput(
-        consumer: "test 2", triggers: {SignalEdge.falling, SignalEdge.rising});
+    line2.requestInput(consumer: "test 2", triggers: {SignalEdge.falling, SignalEdge.rising});
 
-    line3.requestInput(
-        consumer: "test 3", triggers: {SignalEdge.falling, SignalEdge.rising});
+    line3.requestInput(consumer: "test 3", triggers: {SignalEdge.falling, SignalEdge.rising});
 
     final mergedEvents = StreamGroup.mergeBroadcast([
       line0.onEvent.map((event) => IOEvent(event, 22)),
@@ -145,19 +141,14 @@ class _RpiGpioSimpleReaderComponentState
             children: lineEventMap.entries
                 .map((e) => Container(
                       decoration: BoxDecoration(
-                        color: e.value.signalEvent.edge == SignalEdge.rising
-                            ? Colors.green
-                            : Colors.red,
+                        color: e.value.signalEvent.edge == SignalEdge.rising ? Colors.green : Colors.red,
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             "${e.key}",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge
-                                ?.copyWith(
+                            style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                   fontSize: 64,
                                   fontWeight: FontWeight.bold,
                                 ),

@@ -30,7 +30,7 @@ class SliderWhiteBoard extends StatelessWidget {
               bottom: 16,
               child: Image.asset(
                 AssetManager.kSliderLogoColor,
-                height: 48,
+                height: 120,
               ),
             ),
           ],

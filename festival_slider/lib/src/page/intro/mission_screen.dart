@@ -16,22 +16,25 @@ class MissionScreen extends StatelessWidget {
             const Text(
               "Mission",
               style: TextStyle(
-                fontSize: 64,
+                fontSize: 120,
                 color: Colors.white,
               ),
             ),
             SizedBox(
-              height: 24,
+              height: 128,
             ),
             Text(
               "1. Raspberry Pi 4 Flutter 설치하기",
-              style: Theme.of(context).textTheme.headline4?.copyWith(
+              style: Theme.of(context).textTheme.headline3?.copyWith(
                     color: Colors.white,
                   ),
             ),
+            SizedBox(
+              height: 48,
+            ),
             Text(
               "2. Raspberry Pi 4 GPIO 앱 만들기",
-              style: Theme.of(context).textTheme.headline4?.copyWith(
+              style: Theme.of(context).textTheme.headline3?.copyWith(
                     color: Colors.white,
                   ),
             ),

@@ -14,36 +14,36 @@ class TitleScreen extends StatelessWidget {
         onTap: () => GoRouter.of(context).go("/home"),
         child: SliderMasterTitleComponent(
           child: Padding(
-            padding: const EdgeInsets.only(top: 24, left: 48),
+            padding: const EdgeInsets.only(top: 120, left: 64, bottom: 120),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
                   AssetManager.kSliderLogoColor,
-                  height: 72,
+                  height: 94,
                 ),
                 const SizedBox(
                   height: 24,
                 ),
                 Text(
                   "Flutter Embedded",
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.headline1?.copyWith(fontSize: 94),
                 ),
                 const SizedBox(
                   height: 8,
                 ),
                 Text(
                   "데스크톱을 넘어 임베디드까지",
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headline3,
                 ),
-                const SizedBox(
-                  height: 100,
-                ),
+                const Spacer(),
                 Row(
                   children: [
-                    CircleAvatar(
-                      radius: 58,
-                      backgroundImage: NetworkImage("https://avatars.githubusercontent.com/u/19484515?v=4"),
+                    const CircleAvatar(
+                      radius: 72,
+                      backgroundImage: NetworkImage(
+                        "https://avatars.githubusercontent.com/u/19484515?v=4",
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 48),
@@ -52,15 +52,16 @@ class TitleScreen extends StatelessWidget {
                         children: [
                           Text(
                             "박제창 - (주)엔젤로보틱스",
-                            style: Theme.of(context).textTheme.headline5,
+                            style: Theme.of(context).textTheme.headline4,
                           ),
                           const SizedBox(
-                            height: 8,
+                            height: 16,
                           ),
                           Text(
                             "@jaichangpark",
                             style: Theme.of(context).textTheme.headline6?.copyWith(
                                   color: kSecondaryColor,
+                                  fontSize: 32,
                                 ),
                           )
                         ],

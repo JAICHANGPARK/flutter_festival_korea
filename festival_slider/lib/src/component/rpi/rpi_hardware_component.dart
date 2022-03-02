@@ -19,10 +19,10 @@ class RpiHardwareComponent extends StatelessWidget {
               height: 360,
             ),
             Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(64.0),
               child: SelectableText(
                 "The Raspberry Pi Foundation is a UK-based charity that works to put the power of computing and digital making into the hands of people all over the world.",
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headline4,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -39,7 +39,7 @@ class RpiHardwareComponent extends StatelessWidget {
               padding: const EdgeInsets.all(24.0),
               child: SelectableText(
                 "Raspberry Pi 1 - 2012년\nBroadcom BCM2835 SoC(1GHz ARM1176JZF-S CPU)",
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headline4,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -54,7 +54,7 @@ class RpiHardwareComponent extends StatelessWidget {
               padding: const EdgeInsets.all(24.0),
               child: SelectableText(
                 "Raspberry Pi 2 - 2015년\n",
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headline4,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -69,7 +69,7 @@ class RpiHardwareComponent extends StatelessWidget {
               padding: const EdgeInsets.all(24.0),
               child: SelectableText(
                 "Raspberry Pi 3 - 2016년\nBCM2837B0 SoC(1.4GHz ARM Cortex-A53)",
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headline4,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -81,7 +81,7 @@ class RpiHardwareComponent extends StatelessWidget {
               padding: const EdgeInsets.all(0.0),
               child: SelectableText(
                 "Raspberry Pi 4 - 2019년\nBroadcom BCM2711 SoC(1.5GHz ARM Cortex-A72)",
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headline4,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -93,12 +93,12 @@ class RpiHardwareComponent extends StatelessWidget {
               child: SelectableText(
                 "Your tiny, dual-display, desktop computer\n"
                     "…and robot brains, smart home hub, media centre, networked AI core, factory controller, and much more",
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headline4,
                 textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(
-              height: 64,
+              height: 120,
             ),
           ],
         ),

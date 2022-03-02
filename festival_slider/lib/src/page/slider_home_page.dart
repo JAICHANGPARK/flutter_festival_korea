@@ -25,12 +25,36 @@ class SliderHomePage extends ConsumerWidget {
           index == 0
               ? NavigationRail(
                   trailing: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              insetPadding: EdgeInsets.all(120),
+                                // contentPadding: EdgeInsets.all(120),
+                                content: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                              children: const [
+                                ListTile(
+                                  title: Text("Flutter Festival Korea 2022"),
+                                ),
+                                ListTile(
+                                  title: Text("발표자"),
+                                  trailing: Text("박제창"),
+                                ),
+                                ListTile(
+                                  title: Text("레포지토리"),
+                                  trailing: SelectableText("https://github.com/JAICHANGPARK"),
+                                )
+                              ],
+                            ));
+                          });
+                    },
                     icon: const Icon(Icons.info_outlined),
                   ),
                   selectedIndex: _selectedIndex,
                   onDestinationSelected: (int index) {
-                    if(index == 0){
+                    if (index == 0) {
                       GoRouter.of(context).go("/");
                     }
                     if (index == 2 && !(Platform.isLinux)) {

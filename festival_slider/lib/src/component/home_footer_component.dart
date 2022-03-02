@@ -11,7 +11,7 @@ List<Widget> homeFooterItems = [
   }),
   Consumer(builder: (BuildContext context, WidgetRef ref, Widget? child) {
     final index = ref.watch(sliderPageIndexProvider);
-    return Text("$index / ${sliderItems.length}");
+    return Text("$index / ${sliderItems.length - 1}");
   }),
   Consumer(builder: (BuildContext context, WidgetRef ref, Widget? child) {
     final controller = ref.watch(sliderPageController);
@@ -49,8 +49,8 @@ List<Widget> homeFooterItems = [
         onPressed: () {
           int _idx = index;
           _idx++;
-          if (_idx > sliderItems.length) {
-            _idx = sliderItems.length;
+          if (_idx > (sliderItems.length - 1) ) {
+            _idx = (sliderItems.length - 1);
           }
           ref.read(sliderPageIndexProvider.notifier).state = _idx;
           controller.jumpToPage(_idx);
